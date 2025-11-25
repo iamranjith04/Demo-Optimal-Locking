@@ -3,7 +3,7 @@ package com.example.demo.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.Database.DemoDatabase;
+import com.example.demo.Database.DemoDatabaseOptimal;
 import com.example.demo.Repository.DemoDatabaseRepo;
 import com.example.demo.Service.OptimalLockService;
 
@@ -22,7 +22,7 @@ public class OptimalController{
     private OptimalLockService service;
     @GetMapping("/addRecord/{name}")
     public void addRecord(@PathVariable String name){ 
-        DemoDatabase data=new DemoDatabase();
+        DemoDatabaseOptimal data=new DemoDatabaseOptimal();
         data.setName(name);
         data.setAccountBalance(5000);
         dBRepo.save(data);

@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 
-import com.example.demo.Database.DemoDatabase;
+import com.example.demo.Database.DemoDatabaseOptimal;
 import com.example.demo.Repository.DemoDatabaseRepo;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -21,7 +21,7 @@ public class OptimalLockService {
 
     @Transactional
     public void reduceBalanceBy100(int id) {
-        DemoDatabase data=dB.findById(id);
+        DemoDatabaseOptimal data=dB.findById(id);
         try{
             Thread.sleep(10000);
         }
