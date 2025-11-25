@@ -1,4 +1,4 @@
-Pessimistic lock thread 2 waits till thread 1 release the lock. But in opimal locking it uses version field if read version is different from write version then throws error.
+opimal locking it uses version field if read version is different from write version then throws error.
 
 **When use Pessimistic_Write Lock only one transaction can hold the lock for the read/write hence all concurrent transaction are executed sequetially:**
 
