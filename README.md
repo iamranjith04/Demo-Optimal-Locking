@@ -4,7 +4,7 @@ Pessimistic lock thread 2 waits till thread 1 release the lock. But in opimal lo
 
 <img width="864" height="158" alt="image" src="https://github.com/user-attachments/assets/97f7fb94-ddb2-4817-a960-ebeec4902bf4" />
 
-**When use  Pessimistic_Read lock multiple read transaction is possible but only single write has the lock. hence when two transaction read the data it is granted but while update it throws error:**
+**When use  Pessimistic_Read lock multiple read transaction is possible but only single write has the lock. hence when two transaction read the data it is granted but while update the 2nd transaction throws error where 1st transaction is successful:**
 
 <img width="1061" height="271" alt="image" src="https://github.com/user-attachments/assets/5314dce8-43e8-439f-bd00-419744137da2" />
 
