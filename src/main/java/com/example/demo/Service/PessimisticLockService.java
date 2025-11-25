@@ -32,5 +32,25 @@ public class PessimisticLockService {
 
         return "Updated Successfully";
     }
+
+    @Transactional
+    public String reduceBalanceByName100(String name) {
+        DemoDatabasePessimistic db = repo.findByNameForUpdate(name);
+        System.out.println(Thread.currentThread().getName() +" - Acquired lock. Current balance: " + db.getAccountBalance());
+
+        try { 
+            Thread.sleep(30000); 
+        } 
+        catch (Exception e) {
+            return "Error in Thread Sleep";
+        }
+
+        db.setAccountBalance(db.getAccountBalance() - 100);
+        repo.save(db);
+        
+        System.out.println(Thread.currentThread().getName() + " - Updated balance for name: " + name);
+
+        return "Updated Successfully";
+    }
 }
 

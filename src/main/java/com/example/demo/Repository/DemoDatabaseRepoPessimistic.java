@@ -13,5 +13,9 @@ public interface DemoDatabaseRepoPessimistic extends JpaRepository<DemoDatabaseP
     @Lock(LockModeType.PESSIMISTIC_WRITE)
     @Query("SELECT d FROM DemoDatabasePessimistic d WHERE d.id = :id")
     DemoDatabasePessimistic findByIdForUpdate(@Param("id") int id);
+
+    @Lock(LockModeType.PESSIMISTIC_READ)
+    @Query("SELECT d FROM DemoDatabasePessimistic d WHERE d.name = :name")
+    DemoDatabasePessimistic findByNameForUpdate(@Param("name") String name);
     
 }

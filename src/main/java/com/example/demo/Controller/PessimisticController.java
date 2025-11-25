@@ -36,4 +36,13 @@ public class PessimisticController {
             return "Update Failed: " + e.getMessage();
         }
     }
+
+    @GetMapping("/getRecordByName/{name}")
+    public String reduce(@PathVariable String name) {
+        try {
+            return service.reduceBalanceByName100(name);
+        } catch (Exception e) {
+            return "Update Failed: " + e.getMessage();
+        }
+    }
 }
